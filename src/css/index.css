@@ -1,0 +1,231 @@
+/*=============== CROSSPLATFORM ===============*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    padding: 0;
+}
+/*=============== End of Crossplatform ===============*/
+
+/*=============== SHARED ===============*/
+:root {
+    --grey: #808080;
+    --text: #2E2F42;
+    --black: #000000;
+    --dark-purple: #4E75FF;
+    --white: #FFFFFF;
+    --light-purple: #6C8CFF;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+section {
+    padding-top: 36px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+
+.container {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    text-align: center;
+}
+/*=============== End of Shared ===============*/
+
+/*=============== SEARCH FORM ===============*/
+.search-form {
+    display: flex;
+
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.search-textbox {
+    width: 272px;
+    padding: 8px 16px;
+
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+
+    color: var(--text);
+
+    margin-right: 8px;
+
+    font-weight: 500;
+}
+
+.search-textbox:hover {
+    border-color: var(--black);
+}
+
+.search-textbox:focus {
+    border-color: var(--dark-purple);
+    outline: none;
+}
+
+.search-textbox::placeholder {
+    color: var(--grey);
+}
+
+.search-button {
+    color: var(--white);
+    background-color: var(--dark-purple);
+
+    padding: 8px 16px;
+    min-width: 75px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: var(--light-purple);
+}
+/*=============== End of search form ===============*/
+
+/*=============== GALLERY ===============*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    width: 1128px;
+
+    margin-bottom: 32px;
+}
+
+/*list item <li> */
+.gallery-item {
+    width: calc((100% - 2 * 24px) / 3);
+
+    border: 1px solid #000000;
+    border-radius: 8px;
+
+    overflow: hidden;
+    height: fit-content;
+}
+
+/*<img>*/
+.image-card img {
+    cursor: zoom-in;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+/* Gallery card info*/
+/*<ul>*/
+.image-info-card {
+    display: flex;
+    gap: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+
+    width: fit-content;
+}
+
+/*<li>*/
+.image-property {
+    text-align: center;
+}
+
+/*<h3>*/
+.image-property-title {
+    font-size: 14px;
+}
+
+/*<span>*/
+.image-property-value {
+    font-size: 12px;
+}
+/*=============== End of gallery ===============*/
+
+/*=============== LOADING MESSAGE ===============*/
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #000000;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+
+    display: none;
+    margin: 0 auto 30px auto;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*=============== End of loading message ===============*/
+
+/*=============== LOAD MORE BUTTON ===============*/
+.load-more-button {
+    color: #ffffff;
+    background-color: #4E75FF;
+
+    border-radius: 8px;
+    border: none;
+
+    padding: 8px 16px;
+    min-width: 125px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+
+    display: none;
+
+    cursor: pointer;
+}
+
+.load-more-button:hover {
+    background-color: #6C8CFF;
+}
+
+/*=============== End of load more button ===============*/
+
+.gallery-section {
+    margin-bottom: 60px;
+}

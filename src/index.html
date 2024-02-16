@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript HW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="container">
+          <form class="search-form">
+            <input
+              class="search-textbox"
+              type="text"
+              name="userQuery-textbox"
+              placeholder="Search images..."
+            />
+            <button class="search-button" type="submit">Search</button>
+          </form>
+        </div>
+      </section>
+      <section class="gallery-section">
+        <div class="container">
+          <ul class="list gallery"></ul>
+          <span class="loader"></span>
+          <button class="load-more-button" type="button">Load more</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>
