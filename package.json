@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/ImageFinder/",
+    "build": "vite build --base=/image-finder/",
     "preview": "vite preview"
   },
   "devDependencies": {
