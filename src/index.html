@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript HW</title>
+    <title>Image finder</title>
+    <link rel="icon" href="./img/icon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,6 +27,7 @@
               type="text"
               name="userQuery-textbox"
               placeholder="Search images..."
+              autocomplete="off"
             />
             <button class="search-button" type="submit">Search</button>
           </form>
@@ -36,10 +38,16 @@
           <ul class="list gallery"></ul>
           <span class="loader"></span>
           <button class="load-more-button" type="button">Load more</button>
+          <button class="scroll-to-top-button" id="scrollToTopBtn">
+            <svg class="arrow-top-icon" width="12" height="12">
+              <use href="./img/icons.svg#icon-arrow-top"></use>
+            </svg>
+          </button>
         </div>
       </section>
     </main>
 
     <script src="./js/main.js" type="module"></script>
+    <script src="./js/scroll-button.js" type="module"></script>
   </body>
 </html>
