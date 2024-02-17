@@ -1,14 +1,20 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import { globSync } from "glob";
+import injectHTML from "vite-plugin-html-inject";
 
-// https://vitejs.dev/config/
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
   return {
-    root: './', // the root directory (where index.html is located)
-    base: './', // the base of the paths in output directory (what paths in the dist directory are gonna begin with)
-    build: {
-      outDir: './dist', // the output directory (dist folder) (it's also the path from index.html to the dist folder)
+    define: {
+      [command === 'serve' ? 'global' : '_global']: {}, // sets the global object
     },
-    plugins: [react()],
+    root: "src", // the root directory (where index.html is located)
+    base: "./", // the base of the paths in output directory (what paths in the dist directory are gonna begin with)
+    build: {
+      rollupOptions: {
+        input: globSync("./src/**.html"), // the entry point
+      },
+      outDir: "../dist", // the output directory (dist folder)
+    },
+    plugins: [injectHTML()], // plugins
   };
 });
