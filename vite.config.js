@@ -1,30 +1,14 @@
 import { defineConfig } from 'vite';
-import glob from 'glob';
-import injectHTML from 'vite-plugin-html-inject';
-import FullReload from 'vite-plugin-full-reload';
+import react from '@vitejs/plugin-react';
 
-export default defineConfig(({ command }) => {
+// https://vitejs.dev/config/
+export default defineConfig(() => {
   return {
-    define: {
-      [command === 'serve' ? 'global' : '_global']: {},
-    },
-    root: 'src',
+    root: './', // the root directory (where index.html is located)
+    base: './', // the base of the paths in output directory (what paths in the dist directory are gonna begin with)
     build: {
-      sourcemap: true,
-
-      rollupOptions: {
-        input: glob.sync('./src/*.html'),
-        output: {
-          manualChunks(id) {
-            if (id.includes('node_modules')) {
-              return 'vendor';
-            }
-          },
-          entryFileNames: 'commonHelpers.js',
-        },
-      },
-      outDir: '../dist',
+      outDir: './dist', // the output directory (dist folder) (it's also the path from index.html to the dist folder)
     },
-    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    plugins: [react()],
   };
 });
